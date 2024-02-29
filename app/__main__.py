@@ -2,7 +2,7 @@ import os
 
 import pygame
 
-from app.LevelEditor.LevelEditor import LevelEditor
+from app.LevelEditor.editor import LevelEditor
 
 pygame.init()
 main_clock = pygame.time.Clock()
