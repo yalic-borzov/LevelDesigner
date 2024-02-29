@@ -122,7 +122,6 @@ class LevelEditor:
                 self.button_col = 0
 
     def tile_buttons_sync(self):
-        # print(self.buttons)
         for button_count, i in enumerate(self.buttons):
             if i.draw(self.screen):
                 self.current_tile = button_count
