@@ -145,18 +145,25 @@ class LevelEditor:
 
         if load_button.draw(self.screen):
             self._scroll = 0
-            with open("level_data.csv", newline="") as csvfile:
-                reader = csv.reader(csvfile, delimiter=",")
-                for x, row in enumerate(reader):
-                    for y, tile in enumerate(row):
-                        self.world_data[x][y] = int(tile)
+            try:
+                
+                with open(f"{self.data_dir}../level_data.csv", newline="") as csvfile:
+                    reader = csv.reader(csvfile, delimiter=",")
+                    for x, row in enumerate(reader):
+                        for y, tile in enumerate(row):
+                            self.world_data[x][y] = int(tile)
+            except FileNotFoundError: 
+                print("not found")
+                
         if save_button.draw(self.screen):
-
-            with open("level_data.csv", "w", newline="") as csvfile:
-                writer = csv.writer(csvfile, delimiter=",")
-                for row in self.world_data:
-                    writer.writerow(row)
-
+            try:
+                with open(f"{self.data_dir}../level_data.csv", "w", newline="") as csvfile:
+                    writer = csv.writer(csvfile, delimiter=",")
+                    for row in self.world_data:
+                        writer.writerow(row)
+            except FileNotFoundError: 
+                print("not found")
+        
     def panel_draw(self):
         pygame.draw.rect(
             self.screen,
