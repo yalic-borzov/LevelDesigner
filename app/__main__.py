@@ -13,10 +13,10 @@ level = 1
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = f"{BASE_DIR}/data/"
 
-sky_box = pygame.image.load(f"data/img/sky-box-{level}.png").convert_alpha()
-layer_1 = pygame.image.load(f"data/img/layer1-{level}.png").convert_alpha()
-layer_2 = pygame.image.load(f"data/img/layer2-{level}.png").convert_alpha()
-layer_3 = pygame.image.load(f"data/img/layer3-{level}.png").convert_alpha()
+sky_box = pygame.image.load(f"{DATA_DIR}img/sky-box-{level}.png").convert_alpha()
+layer_1 = pygame.image.load(f"{DATA_DIR}img/layer1-{level}.png").convert_alpha()
+layer_2 = pygame.image.load(f"{DATA_DIR}img/layer2-{level}.png").convert_alpha()
+layer_3 = pygame.image.load(f"{DATA_DIR}img/layer3-{level}.png").convert_alpha()
 if __name__ == "__main__":
     editor = LevelEditor(
         data_dir=DATA_DIR,
